@@ -7,9 +7,8 @@ export default function MeetupList({meetuplist}) {
     <ul className={classes.list}>
       {meetuplist.map((meetup) => (
         <MeetupItems key={meetup.id} 
-        
           image={meetup.image}
-          desc={meetup.decription}
+          desc={meetup.description}
           adress={meetup.address}
           title={meetup.title}
           id={meetup.id}

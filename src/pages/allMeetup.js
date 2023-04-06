@@ -50,7 +50,7 @@ export default function AllMeetup() {
   useEffect(() => {
     fetchHandler();
   },['']);
-  console.log(meetdata)
+  // console.log(meetdata)
   return (
     <section>
       <h3>AllMeetup</h3>

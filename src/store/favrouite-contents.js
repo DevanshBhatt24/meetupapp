@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { createContext } from "react";
 const FavContext = createContext({
   favrouites: [],
@@ -11,19 +11,20 @@ export  function FavrouiteContent(props) {
   const [userFav, setUserFav] = useState([]);
 
   function addFavHandler(favMeetup) {
-    setUserFav((current)=>{
-       return [...current,favMeetup]
-    }
+    
+    setUserFav((current)=> [...current,favMeetup]
+    
     );
-    // console.log(userFav)
+    
   }
-  function removeFavHandler(meetupid) {
-    setUserFav((prevmeetup) =>
+   function removeFavHandler(meetupid) {
+     setUserFav((prevmeetup) =>
       prevmeetup.filter((meetup) => meetup.id !== meetupid)
     );
   }
   function isFavHandler(meetupid) {
-    return userFav.some(meetup=>meetup.id===meetupid)
+    return (
+      userFav.some(meetup=>meetup.id===meetupid))
   }
 
  

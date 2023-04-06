@@ -1,28 +1,28 @@
-import React from "react";
 import classes from "./meetupitems.module.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Card from "../ui/card";
 import FavContext from "../../store/favrouite-contents";
+
+
+
 export default function MeetupItems({ image, id, title, adress, desc }) {
- const favctx=useContext(FavContext)
+  const favctx=useContext(FavContext)
 
- const isfav=favctx.isFavrouite(id)
+  const isfav=favctx.isFavrouite(id);
+   async function toggleAddHandler(){
+      if(isfav){
+       favctx.removeFav(id)
+      }
+      else{
+        favctx.addFav({id:id,
+          title:title,
+          description:desc,
+          image:image,
+          address:adress})
+      }
+   }
 
-  function toggleAddHandler(){
-     if(isfav){
-      favctx.removeFav(id)
-     }
-     else{
-       favctx.addFav({
-        id:id,
-        title:title,
-        description:desc,
-        image:image,
-        address:adress
-       })
-     }
-  }
-  return (
+   return (
     <li className={classes.item}>
       <Card>
         <div className={classes.image}>
