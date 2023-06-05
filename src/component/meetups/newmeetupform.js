@@ -9,11 +9,11 @@ export default function NewMeetupForm(props){
     
     function submithandler(e){
         e.preventDefault();
-        const inputitile=titleref.current.value;
-        const inputimage=imageref.current.value;
-        const inputdesc=descref.current.value;
-        const inputadress=adressref.current.value;
-        const metdata={
+        let inputitile=titleref.current.value;
+        let inputimage=imageref.current.value;
+        let inputdesc=descref.current.value;
+        let inputadress=adressref.current.value;
+        let metdata={
             title:inputitile,
             image:inputimage,
             description:inputdesc,
@@ -21,7 +21,8 @@ export default function NewMeetupForm(props){
         }
         console.log(metdata)
         props.addMeetup(metdata);
-        
+  
+
     }
 return (
     <Card>

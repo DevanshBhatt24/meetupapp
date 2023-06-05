@@ -5,7 +5,7 @@ export default function MeetupList({meetuplist}) {
   console.log(meetuplist)
   return (
     <ul className={classes.list}>
-      {meetuplist.map((meetup) => (
+      { meetuplist.map((meetup) => (
         <MeetupItems key={meetup.id} 
           image={meetup.image}
           desc={meetup.description}
